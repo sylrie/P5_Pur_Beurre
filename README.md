@@ -23,7 +23,7 @@ the application offers the following questions to the user:
 If the user **return 2**,
 the application offers the results in database
 
-## Fonctionnalités
+## Features
 
 * Search for food in the Open Food Facts database.
 * Le programme propose substitut, description, magasin ou l'acheter et un lien vers la page d'Open Food Facts.
