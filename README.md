@@ -1,15 +1,14 @@
-# PROJET 5 OC
-# Use public data from OpenFoodFacts
+> PROJET 5 OpenClassrooms - Substiute product - Pur Beurre
 
 <p align="center">
-    <img width=100% src="https://github.com/sylrie/P5_Pur_Beurre/tree/master/img/openfoodfacts.png">
+    <img width=100% src="https://github.com/sylrie/P5_Pur_Beurre/blob/master/img/openfoodfacts.png">
 </p>
 
 The goal of *Pur Beurre* is to create a program that interacts with the Open Food Facts database for compare food and propose a healthier substitute for the food.
 
 ## Description
 
-Sur le terminal, l'utilisateur se voit proposer plusieurs choix :
+On terminal, the user receive multiple choice:
 * 1-What food do you want to replace ?
 * 2-Find my substituted fodds.
 
