@@ -1,7 +1,9 @@
 # PROJET 5 OC
 # Use public data from OpenFoodFacts
 
-Rieutor sylvain
+<p align="center">
+    <img width=100% src="https://github.com/sylrie/P5_Pur_Beurre/img/openfoodfacts.png">
+</p>
 
 The goal of *Pur Beurre* is to create a program that interacts with the Open Food Facts database for compare food and propose a healthier substitute for the food.
 
@@ -21,7 +23,7 @@ the application offers the following questions to the user:
 * The user has the possibility to save the result in the database.
 
 If the user **return 2**,
-the application offers the results in database
+the application offers the results saved in database.
 
 ## Features
 
