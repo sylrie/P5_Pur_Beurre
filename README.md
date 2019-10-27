@@ -2,7 +2,7 @@
 # Use public data from OpenFoodFacts
 
 <p align="center">
-    <img width=100% src="https://github.com/sylrie/P5_Pur_Beurre/img/openfoodfacts.png">
+    <img width=100% src="https://github.com/sylrie/P5_Pur_Beurre/tree/master/img/openfoodfacts.png">
 </p>
 
 The goal of *Pur Beurre* is to create a program that interacts with the Open Food Facts database for compare food and propose a healthier substitute for the food.
