@@ -12,34 +12,34 @@ The goal of *Pur Beurre* is to create a program that interacts with the Open Foo
 ## REQUIREMENTS
 
 * Python 3 
-https://www.python.org/ftp/python/3.8.0/python-3.8.0.exe
+- https://www.python.org/ftp/python/3.8.0/python-3.8.0.exe
 
 * MySQL Database and a connexion to MySql serveur:
-https://dev.mysql.com/downloads/
+ -https://dev.mysql.com/downloads/
 
 
 ## START
 
-1.**Clone** or **download** the repository:
-https://github.com/sylrie/P5_Pur_Beurre.git
+* 1.**Clone** or **download** the repository:
+- https://github.com/sylrie/P5_Pur_Beurre.git
 
-2.Install **packages**:
-Select on the Shell the repository:
-exemple:
+* 2.Install **packages**:
+- Select on the Shell the repository:
+- exemple:
 ```shell
 C:\Users\Users\Admin\Desktop\P5_Pur_Beurre>
 ```
-then launch this commande line:
+- then launch this commande line:
 ```
 pip install -r requirements.txt
 ```
 
-3.Launch the program:
+* 3.Launch the program:
 ```
 python main.py
 ```
 
-4.Your **MySQL informations** will be required for the first use.
+* 4.Your **MySQL informations** will be required for the first use.
 
 
 ## DESCRIPTION
@@ -49,7 +49,7 @@ On terminal, the user receive multiple choice:
 * 2-Find my substituted fodds.
 
 If the user **return 1**,
-the application offers the following questions to the user:
+- the application offers the following questions to the user:
 
 * Select the category. [Several propositions associated with a number. The user return the number corresponding and press enter]
 * Select the food. [Several propositions associated with a number. The user return the number corresponding to the chosen food and press enter]
@@ -57,7 +57,8 @@ the application offers the following questions to the user:
 * The user has the possibility to save the result in the database.
 
 If the user **return 2**,
-* the application offers the results saved in database.
+- the application offers the results saved in database.
+
 
 ## FEATURES
 
