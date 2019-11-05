@@ -20,10 +20,11 @@ The goal of *Pur Beurre* is to create a program that interacts with the Open Foo
 
 ## START
 
-* 1.**Clone** or **download** the repository:
-https://github.com/sylrie/P5_Pur_Beurre.git
+* **1.****Clone** or **download** the repository:
+- https://github.com/sylrie/P5_Pur_Beurre.git
 
-* 2.Install **packages**:
+
+* **2**.Install **packages**:
 - Select on the Shell the repository:
 - exemple:
 ```shell
@@ -34,12 +35,13 @@ C:\Users\Users\Admin\Desktop\P5_Pur_Beurre>
 pip install -r requirements.txt
 ```
 
-* 3.Launch the program:
+* **3.**Launch the program:
 ```
 python main.py
 ```
 
-* 4.Your **MySQL informations** will be required for the first use.
+
+* **4.**Your **MySQL informations** will be required for the first use.
 
 
 ## DESCRIPTION
