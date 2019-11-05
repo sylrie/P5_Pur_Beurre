@@ -56,6 +56,7 @@ class Tables():
             FROM {}
             WHERE {}
             ='{}'
+            LIMIT 5
             """.format(
                 value,
                 table,
@@ -75,7 +76,7 @@ class Tables():
             ='{}'
             AND {}
             ='{}'
-            """.format(
+            LIMIT 2""".format(
                 value,
                 table,
                 column,

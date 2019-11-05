@@ -1,12 +1,48 @@
-> PROJET 5 OpenClassrooms - Substiute product - Pur Beurre
-
 <p align="center">
-    <img width=40% src="https://github.com/sylrie/P5_Pur_Beurre/blob/master/img/openfoodfacts.png">
+    <img width=50% src="https://github.com/sylrie/P5_Pur_Beurre/blob/master/img/P5.png">
 </p>
+<p align="center">
+    <img width=30% src="https://github.com/sylrie/P5_Pur_Beurre/blob/master/img/openfoodfacts.png">
+</p>
+
+> PROJET 5 OpenClassrooms - Substiute product - Pur Beurre
 
 The goal of *Pur Beurre* is to create a program that interacts with the Open Food Facts database for compare food and propose a healthier substitute for the food.
 
-## Description
+## REQUIREMENTS
+
+* Python 3 
+https://www.python.org/ftp/python/3.8.0/python-3.8.0.exe
+
+* MySQL Database and a connexion to MySql serveur:
+https://dev.mysql.com/downloads/
+
+
+## START
+
+1.**Clone** or **download** the repository:
+https://github.com/sylrie/P5_Pur_Beurre.git
+
+2.Install **packages**:
+Select on the Shell the repository:
+exemple:
+```shell
+C:\Users\Users\Admin\Desktop\P5_Pur_Beurre>
+```
+then launch this commande line:
+```
+pip install -r requirements.txt
+```
+
+3.Launch the program:
+```
+python main.py
+```
+
+4.Your **MySQL informations** will be required for the first use.
+
+
+## DESCRIPTION
 
 On terminal, the user receive multiple choice:
 * 1-What food do you want to replace ?
@@ -21,12 +57,12 @@ the application offers the following questions to the user:
 * The user has the possibility to save the result in the database.
 
 If the user **return 2**,
-the application offers the results saved in database.
+* the application offers the results saved in database.
 
-## Features
+## FEATURES
 
-* Search for food in the Open Food Facts database.
-* Le programme propose substitut, description, magasin ou l'acheter et un lien vers la page d'Open Food Facts.
+* Search for food in the **Open Food Facts API**.
+* The application offers a substitute, its description, a store where buy it and a link to the page Open Food Facts.
 * Interaction of the user with the program in the terminal.
 * Management of user input errors.
-* Using a MySql database.
+* Using a **MySql database**.

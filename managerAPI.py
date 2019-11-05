@@ -10,11 +10,11 @@ class ManagerAPI():
         def __init__(self):
 
                 self.categories = (
-                        "saucisson",
-                        "pizza",
-                        "chips",
-                        "pâtes à tartiner",
-                        "biscuits"
+                        "Saucisson",
+                        "Pizza",
+                        "Chips",
+                        "Yaourts",
+                        "Biscuits"
                 )
                 self.food_list = []
 

@@ -4,14 +4,15 @@
 from getpass import getpass
 import mysql.connector
 import json
-import pprint
 
+import methods
 from managerAPI import ManagerAPI
 
 
 class ManagerDB():
 
     def __init__(self):
+        
         
         self.connection = self.check_database()
         self.init_food()
@@ -30,42 +31,53 @@ class ManagerDB():
         return(connection)
 
     def first_connection(self):
-
+        check = False
         with open("options.json") as options:
             data = json.load(options)
-            print("connection à Mysql:")
-            user = input("Nom utilisteur: ")
-            password = getpass("Mot de passe: ")
-            #password = input("Password: ")
-            host = input("host: ")
+            methods.color_print("normal", "Connection à Mysql:")
+            while not check:
+                methods.color_print("normal", "Nom utilisteur:")
+                user = input()
 
-            data[0]["user"] = user
-            data[0]["password"] = password
-            data[0]["host"] = host
+                methods.color_print("normal", "Le mot de passse ne s'affichera pas")
+                methods.color_print("normal", "Mot de passe:")
+                password = getpass("")
 
-            with open("options.json", "w") as options:
-                json.dump(data, options)
+                methods.color_print("normal", "Hote:")
+                host = input()
 
-            try:
-                connection = mysql.connector.connect(
-                    user=user,
-                    password=password,
-                    host=host,
-                )
-                return(connection)
+                coded_password = methods.coding(password, "code")
 
-            except Exception as e:
-                pass
+                data[0]["user"] = user
+                data[0]["password"] = coded_password
+                data[0]["host"] = host
+
+                with open("options.json", "w") as options:
+                    json.dump(data, options)
+
+                try:
+                    connection = mysql.connector.connect(
+                        user=user,
+                        password=password,
+                        host=host,
+                    )
+                    check
+                    return(connection)
+
+                except Exception as e:
+                    methods.color_print("error", "---Erreur de connection, Veuillez recommencer---")
                 
     def get_connection(self):
 
         with open("options.json") as options:
             data = json.load(options)
 
+            password = methods.coding(data[0]["password"])
+
         try:
             connection = mysql.connector.connect(
                 user=data[0]["user"],
-                password=data[0]["password"],
+                password=password,
                 host=data[0]["host"],
                 database=data[0]["database"]
             )
@@ -94,32 +106,27 @@ class ManagerDB():
                 result = cursor.fetchall()
                 cursor.close()
                 return(result)
-                #for row in result:
-                    #print(row)
 
             except Exception as e:
                pass
             
-        #cursor.close()
-        #self.connection.commit()
+        cursor.close()
+        self.connection.commit()
 
     def query_favorites(self, sql, userid):
+        
         cursor = self.connection.cursor()
 
         try:
-                cursor.execute(sql)
+            cursor.execute(sql)
             
         except Exception as e:
             pass
             
         result = cursor.fetchall() 
-        for row in result:
-            if row[0] == userid:
-                print(row[1])
-            else:
-                pass
-
+        
         cursor.close()
+        return(result)
 
     def create_tables(self):
 
@@ -143,10 +150,10 @@ class ManagerDB():
             data = json.load(options)
         if data[0]["initialised"] == "false":
 
-            print("Création de la Base de Données...")
+            methods.color_print("normal", "Création de la Base de Données...")
             self.create_tables()
 
-            print("importation des données d'Open Food Facts...")
+            methods.color_print("normal", "Importation des données d'Open Food Facts...")
 
             food_list = ManagerAPI().food_list
             cursor = self.connection.cursor()
@@ -183,7 +190,8 @@ class ManagerDB():
 
             with open("options.json", "w") as options:
                 json.dump(data, options)
-            print("Les données d'Open Food Facts ont été ajoutées")
+            
+            methods.color_print("normal", "Les données d'Open Food Facts ont été ajoutées")
         
         else:
             pass
