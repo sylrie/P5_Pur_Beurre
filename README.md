@@ -24,17 +24,17 @@ The goal of *Pur Beurre* is to create a program that interacts with the Open Foo
 <P> https://github.com/sylrie/P5_Pur_Beurre.git</p>
 
 * 2.Install **packages**:
-<p> Select on the Shell the repository:
-<p> exemple:
+<p> Select on the Shell the repository:</p>
+exemple:
 ```shell
 C:\Users\Users\Admin\Desktop\P5_Pur_Beurre>
 ```
-</p>
-<p> then launch this commande line:
+
+then launch this commande line:
 ```
 pip install -r requirements.txt
 ```
-</p>
+
 * 3.Launch the program:
 ```
 python main.py
