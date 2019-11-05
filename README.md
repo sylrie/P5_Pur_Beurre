@@ -20,28 +20,26 @@ The goal of *Pur Beurre* is to create a program that interacts with the Open Foo
 
 ## START
 
-* **1.****Clone** or **download** the repository:
-- https://github.com/sylrie/P5_Pur_Beurre.git
+* 1.**Clone** or **download** the repository:
+<P> https://github.com/sylrie/P5_Pur_Beurre.git</p>
 
-
-* **2**.Install **packages**:
-- Select on the Shell the repository:
-- exemple:
+* 2.Install **packages**:
+<p> Select on the Shell the repository:</p>
+<p> exemple:</p>
 ```shell
 C:\Users\Users\Admin\Desktop\P5_Pur_Beurre>
 ```
-- then launch this commande line:
+<p> then launch this commande line:</p>
 ```
 pip install -r requirements.txt
 ```
 
-* **3.**Launch the program:
+* 3.Launch the program:
 ```
 python main.py
 ```
 
-
-* **4.**Your **MySQL informations** will be required for the first use.
+* 4.Your **MySQL informations** will be required for the first use.
 
 
 ## DESCRIPTION
@@ -53,8 +51,9 @@ On terminal, the user receive multiple choice:
 If the user **return 1**,
 - the application offers the following questions to the user:
 
-* Select the category. [Several propositions associated with a number. The user return the number corresponding and press enter]
-* Select the food. [Several propositions associated with a number. The user return the number corresponding to the chosen food and press enter]
+* 1.Select the category. [Several propositions associated with a number. The user return the number corresponding and press enter]
+* 2.Select the food. [Several propositions associated with a number. The user return the number corresponding to the chosen food and press enter]
+
 * The application offers a substitute, its description, a store where buy it and a link to the page Open Food Facts about this food
 * The user has the possibility to save the result in the database.
 
