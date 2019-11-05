@@ -12,16 +12,16 @@ The goal of *Pur Beurre* is to create a program that interacts with the Open Foo
 ## REQUIREMENTS
 
 * Python 3 
-- https://www.python.org/ftp/python/3.8.0/python-3.8.0.exe
+* MySQL Database and a connexion to MySql serveur
 
-* MySQL Database and a connexion to MySql serveur:
- -https://dev.mysql.com/downloads/
+- Install Python 3.8 https://www.python.org/ftp/python/3.8.0/python-3.8.0.exe
+- Install Mysql: https://dev.mysql.com/downloads/
 
 
 ## START
 
 * 1.**Clone** or **download** the repository:
-- https://github.com/sylrie/P5_Pur_Beurre.git
+https://github.com/sylrie/P5_Pur_Beurre.git
 
 * 2.Install **packages**:
 - Select on the Shell the repository:
