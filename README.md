@@ -20,12 +20,12 @@ The goal of *Pur Beurre* is to create a program that interacts with the Open Foo
 
 ## START
 
-* 1.**Clone** or **download** the repository:
+* 1.**Clone** or **download** the repository :
 <P> https://github.com/sylrie/P5_Pur_Beurre.git</p>
 
 * 2.Install **packages**:
-<p> Select on the Shell the repository:</p>
-exemple:
+Select on the Shell the repository (exemple):
+
 ```shell
 C:\Users\Users\Admin\Desktop\P5_Pur_Beurre>
 ```

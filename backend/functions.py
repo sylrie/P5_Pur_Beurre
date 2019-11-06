@@ -1,25 +1,36 @@
+#! /usr/bin/env python3
+# coding: UTF-8
+
+# library import
 import string
 
 
 def color_print(code, message):
+    """ Display message with selected color"""
 
-        if code == "error":
-            color = "3;31;40m" 
-        elif code == "normal":
-            color = "1;32;40m"
-        elif code == "data":
-            color = "6;33;40m"
-        elif code == "link":
-            color = "3;34;40m"
-        
-        print('\x1b[{}'.format(color) + message + '\x1b[0m')
+    if code == "error":
+        color = "3;31;40m"
 
-def cesar(chaine,dec) :
+    elif code == "normal":
+        color = "1;32;40m"
+
+    elif code == "data":
+        color = "6;33;40m"
+
+    elif code == "link":
+        color = "3;34;40m"
+
+    print('\x1b[{}'.format(color) + message + '\x1b[0m')
+
+def cesar(chain, dec):
+    """ Use Cesar method for coding characters"""
+
     alph = string.ascii_uppercase
-    character = chaine.upper()
+    character = chain.upper()
     return character.translate(str.maketrans(alph,alph[dec:]+alph[:dec]))
 
 def coding(password, action=None):
+    """ select the key for Cesar method and check characters"""
     
     # key for code or uncode
     if action == "code":
