@@ -53,3 +53,29 @@ def coding(password, action=None):
     mdp = "".join(to_crypt)
 
     return(mdp)
+
+def check_input(to_check):
+    """ Check if input is integer """
+
+    try:
+        to_check = int(to_check)
+        return True
+    
+    except ValueError:
+        return False
+
+def not_int():
+    """ Print error not integer """
+
+    color_print(
+        "error",
+        "---Veuillez entrer un chiffre---"
+    )
+
+def not_in_list():
+    """ Print error not in list """
+
+    color_print(
+        "error",
+        "---Oups! le choix n'est pas dans la liste---"
+    )

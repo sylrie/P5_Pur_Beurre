@@ -65,7 +65,19 @@ If the user **return 2**,
 ## FEATURES
 
 * Search for food in the **Open Food Facts API**.
-* The application offers a substitute, its description, a store where buy it and a link to the page Open Food Facts.
+Make an API request for input values to database (food table)
+
+* Select food form category
+the program shows 5 foods on selected category
+
+* The application offers substitutes (2 max)
+Looking into the database for find substitutes
+
+* Favorites
+The program offer to save the substitute,
+Show saved favorites and details,
+Favorite food can be deleted.
+
 * Interaction of the user with the program in the terminal.
 * Management of user input errors.
 * Using a **MySql database**.

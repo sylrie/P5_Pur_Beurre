@@ -91,7 +91,8 @@ class ManagerDb():
                     check = True
                     return connection
 
-                except Exception:
+                except Exception as e:
+                    print(e)
                     function.color_print(
                         "error",
                         "---Erreur de connection, Veuillez recommencer---"
@@ -115,8 +116,8 @@ class ManagerDb():
 
             return connection
 
-        except Exception:
-            pass
+        except Exception as e:
+            print(e)
 
     def query(self, sql, val=None):
         """ make query for database """
@@ -127,8 +128,8 @@ class ManagerDb():
             try:
                 cursor.execute(sql, val)
 
-            except Exception:
-                pass
+            except Exception as e:
+                print(e)
 
             cursor.close()
             self.connection.commit()
@@ -141,8 +142,8 @@ class ManagerDb():
 
                 return result
 
-            except Exception:
-                pass
+            except Exception as e:
+                print(e)
 
         cursor.close()
         self.connection.commit()
@@ -162,7 +163,7 @@ class ManagerDb():
                 pass
 
         except Exception:
-            pass
+            print(e)
 
     def init_food(self):
         """ Add datas in food table """

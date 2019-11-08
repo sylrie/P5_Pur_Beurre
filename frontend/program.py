@@ -6,7 +6,10 @@
 # coding: UTF-8
 
 # programs import
+import backend.functions as functions
 from backend.functions import color_print
+from backend.functions import check_input
+
 from backend.manager_db import ManagerDb
 from backend.manager_api import ManagerApi
 import backend.tables_db as tables
@@ -17,7 +20,7 @@ class Program():
 
     def __init__(self):
 
-        self.check_database = ManagerDb()
+        self.loop_database = ManagerDb()
         self.categories = ManagerApi().categories
         self.loop = True
         self.selected_category = ""
@@ -54,8 +57,8 @@ class Program():
             self.new_user()
 
         else:
-            check = False
-            while not check:
+            loop = False
+            while not loop:
 
                 color_print(
                     "normal",
@@ -64,13 +67,17 @@ class Program():
                 nbr = input()
 
                 if nbr == "+":
-                    check = True
+                    loop = True
                     self.new_user()
 
                 else:
-                    try:
+                    check = check_input(nbr)
+
+                    if check:
+                        nbr = int(nbr)
+
                         if int(nbr) - 1 in range(len(users)):
-                            check = True
+
                             username = tables.show_value('username', 'users', 'id', nbr)
                             color_print(
                                 "normal",
@@ -80,18 +87,13 @@ class Program():
                                 )
                             )
                             self.user = nbr
+                            loop = True
 
                         else:
-                            color_print(
-                                "error",
-                                "---Le numéro n'est pas dans la liste!---"
-                            )
+                            functions.not_in_list()
 
-                    except:
-                        color_print(
-                            "error",
-                            "---Veuillez entrer un chiffre!---"
-                        )
+                    else:
+                        functions.not_int()
 
     def new_user(self):
         """ Create a user """
@@ -100,10 +102,11 @@ class Program():
             "normal",
             "Veuillez entrez votre nom:"
         )
-
         username = input()
 
-        tables.add_user(username)
+        tables.add_user(
+            username
+        )
 
         color_print(
             "normal",
@@ -126,10 +129,10 @@ class Program():
         while self.loop:
 
             action = self.action_choice()
-            if action == "1":
+            if action == 1:
                 self.select_category()
                 self.select_food()
-            elif action == "2":
+            elif action == 2:
                 self.show_favorites()
 
         color_print(
@@ -140,8 +143,8 @@ class Program():
     def action_choice(self):
         """ Select first action """
 
-        check = False
-        while not check:
+        loop = False
+        while not loop:
 
             color_print(
                 "data",
@@ -162,25 +165,29 @@ class Program():
 
             action = input()
 
-            if action in ("1", "2"):
-                check = True
-                return action
+            test = check_input(action)
 
-            elif action == "3":
-                check = True
-                self.loop = False
+            if test:
+                action = int(action)
+                if action in (1, 2):
+                    loop = True
+                    return action
+
+                elif action == 3:
+                    loop = True
+                    self.loop = False
+
+                else:
+                    functions.not_in_list()
 
             else:
-                color_print(
-                    "error",
-                    "---Oups! le choix doit être 1, 2 ou 3---"
-                )
+                functions.not_int()
 
     def select_category(self):
         """ Select a categry in Food table """
 
-        check = False
-        while not check:
+        loop = False
+        while not loop:
 
             color_print(
                 "data",
@@ -206,23 +213,19 @@ class Program():
 
             cat = input()
 
-            try:
+            check = check_input(cat)
+            if check:
+
                 cat = int(cat) - 1
 
                 if cat in range(len(self.categories)):
-                    check = True
+                    loop = True
                     self.selected_category = self.categories[cat]
                 else:
-                    color_print(
-                        "error",
-                        "---Le numéro n'est pas dans la liste!---"
-                    )
+                    functions.not_in_list()
 
-            except:
-                color_print(
-                    "error",
-                    "---Veuillez entrer un chiffre!---"
-                )
+            else:
+                functions.not_int()
 
     def select_food(self):
         """ select food in food list """
@@ -251,8 +254,8 @@ class Program():
             )
             count += 1
 
-        check = False
-        while not check:
+        loop = False
+        while not loop:
 
             color_print(
                 "normal",
@@ -260,11 +263,13 @@ class Program():
             )
             select = input()
 
-            try:
+            check = check_input(select)
+            if check:
 
-                if int(select) - 1 in range(len(result)):
+                select = int(select)
+                if select - 1 in range(len(result)):
 
-                    id_selected = result[int(select)-1][0]
+                    id_selected = result[select - 1][0]
 
                     color_print(
                         "data",
@@ -272,21 +277,16 @@ class Program():
                     )
                     color_print(
                         "normal",
-                        result[int(select)-1][1]
+                        result[select - 1][1]
                     )
 
-                    check = True
+                    loop = True
 
                 else:
-                    color_print(
-                        "error",
-                        "---Le numéro n'est pas dans la liste!---"
-                    )
-            except:
-                color_print(
-                    "error",
-                    "---Veuillez entrer un chiffre!---"
-                )
+                    functions.not_in_list()
+
+            else:
+                functions.not_int()
 
         self.substitute(id_selected)
 
@@ -322,9 +322,14 @@ class Program():
             food = tables.show_mutli(
                 "*",
                 "food",
-                "category",
-                self.selected_category,
-                "nutrigrade", score
+                (
+                    "category",
+                    "nutrigrade"
+                ),
+                (
+                    self.selected_category,
+                    score
+                )
             )
 
             if nutrigrade == substitute_nutriscore:
@@ -364,8 +369,8 @@ class Program():
 
             count += 1
 
-        check = False
-        while not check:
+        loop = False
+        while not loop:
 
             color_print(
                 "normal",
@@ -379,18 +384,23 @@ class Program():
 
             action = input()
 
-            if action == "1":
-                self.save_food(food)
-                check = True
+            check = check_input(action)
+            if check:
 
-            elif action == "2":
-                check = True
+                action = int(action)
+
+                if action == 1:
+                    self.save_food(food)
+                    loop = True
+
+                elif action == 2:
+                    loop = True
+
+                else:
+                    functions.not_in_list()
 
             else:
-                color_print(
-                    "error",
-                    "---La réponse doit être 1 ou 2---"
-                )
+                functions.not_int()
 
     def save_food(self, food_list):
         """ Add favorite """
@@ -408,9 +418,22 @@ class Program():
                 "normal",
                 "entrez le NUMERO du produit à enregistrer:"
             )
+            loop = False
+            while not loop:
 
-            food = input()
-            food = int(food) - 1
+                food = input()
+
+                check = check_input(food)
+                if check:
+
+                    food = int(food) - 1
+                    if food in range(len(food_list)):
+                        loop = True
+                    else:
+                        functions.not_in_list()
+
+                else:
+                    functions.not_int()
 
         message = tables.add_favorite(self.user, food_list[food][0])
 
@@ -461,8 +484,8 @@ class Program():
                 )
                 count += 1
 
-            check = False
-            while not check:
+            loop = False
+            while not loop:
 
                 color_print(
                     "normal",
@@ -476,18 +499,23 @@ class Program():
 
                 action = input()
 
-                if action in ("1", "2"):
-                    self.favorites_options(result, action)
-                    check = True
+                check = check_input(action)
+                if check:
 
-                elif action == "3":
-                    check = True
+                    action = int(action)
+
+                    if action in (1, 2):
+                        self.favorites_options(result, action)
+                        loop = True
+
+                    elif action == 3:
+                        loop = True
+
+                    else:
+                        functions.not_in_list()
 
                 else:
-                    color_print(
-                        "error",
-                        "---La réponse doit être 1 ou 2---"
-                    )
+                    functions.not_int()
 
         else:
             color_print(
@@ -498,63 +526,72 @@ class Program():
     def favorites_options(self, favorites, action):
         """ option for favorites table """
 
-        if action in ("1", "2"):
+        if action in (1, 2):
 
             color_print(
                 "data",
                 "Entrez le NUMERO du produit:"
             )
 
-            food = input()
-            food_id = favorites[int(food)-1][0]
+            loop = False
 
-            if action == "1":
-                food = tables.show_value(
-                    "*",
-                    "Food",
-                    "id",
-                    food_id
-                )
+            while not loop:
 
-                color_print(
-                    "normal",
-                    food[0][2]
-                )
+                food = input()
 
-                color_print(
-                    "data",
-                    """Catégorie: {}\nMarque: {}\nNutrigrade: {}\nMagasin(s): {}"""
-                    .format(
-                        food[0][1],
-                        food[0][4],
-                        food[0][7].upper(),
-                        food[0][5]
-                    )
-                )
+                check = check_input(food)
+                if check:
 
-                color_print(
-                    "link",
-                    food[0][6]
-                )
-                color_print(
-                    "normal",
-                    "        -----------------         "
-                )
+                    food_id = favorites[int(food)-1][0]
+        
+                    if action == 1:
+                        food = tables.show_value(
+                            "*",
+                            "Food",
+                            "id",
+                            food_id
+                        )
 
-            elif action == "2":
-                tables.action_values(
-                    "DELETE",
-                    "Favorites",
-                    "FoodID",
-                    food_id
-                )
-                color_print(
-                    "normal",
-                    "Le produit à été supprimé des favoris"
-                )
+                        color_print(
+                            "normal",
+                            food[0][2]
+                        )
 
-        else:
-            color_print(
-                "error",
-                "---La réponse doit être 1 ou 2---"
-            )
+                        color_print(
+                            "data",
+                            """Catégorie: {}\nMarque: {}\nNutrigrade: {}\nMagasin(s): {}"""
+                            .format(
+                                food[0][1],
+                                food[0][4],
+                                food[0][7].upper(),
+                                food[0][5]
+                            )
+                        )
+
+                        color_print(
+                            "link",
+                            food[0][6]
+                        )
+                        color_print(
+                            "normal",
+                            "          ----------------------          "
+                        )
+                        loop = True
+
+                    elif action == 2:
+                        tables.action_values(
+                            "DELETE",
+                            "Favorites",
+                            "FoodID",
+                            food_id
+                        )
+                        color_print(
+                            "normal",
+                            "Le produit à été supprimé des favoris"
+                        )
+                        loop = True
+                    else:
+                        functions.not_in_list()
+
+                else:
+                    functions.not_int()

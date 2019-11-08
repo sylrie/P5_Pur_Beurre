@@ -14,7 +14,7 @@ def add_user(user_name, user_password=None):
 
     sql = """INSERT INTO users (
             username,
-            userpseudo
+            userpassword
         )
         VALUES (
             %s,
@@ -56,7 +56,7 @@ def show_value(value, table, column, column_value):
 
     return query
 
-def show_mutli( value, table, column, column_value, column2, column_value2):
+def show_mutli( value, table, column, column_value):
     """ look values for selected table and selected values """
 
     sql = """SELECT {}
@@ -68,10 +68,10 @@ def show_mutli( value, table, column, column_value, column2, column_value2):
         LIMIT 2""".format(
             value,
             table,
-            column,
-            column_value,
-            column2,
-            column_value2
+            column[0],
+            column_value[0],
+            column[1],
+            column_value[1]
         )
 
     query = ManagerDb().query(sql)
