@@ -67,16 +67,16 @@ If the user **return 2**,
 * Search for food in the **Open Food Facts API**.
 Make an API request for input values to database (food table)
 
-* Select food form category
-the program shows 5 foods on selected category
+* Select food form category.
+The program shows 5 foods on selected category
 
-* The application offers substitutes (2 max)
+* The application offers substitutes (2 max).
 Looking into the database for find substitutes
 
-* Favorites
+* Favorites:
 The program offer to save the substitute,
-Show saved favorites and details,
-Favorite food can be deleted.
+show saved favorites and details,
+favorite food can be deleted.
 
 * Interaction of the user with the program in the terminal.
 * Management of user input errors.

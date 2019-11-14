@@ -184,7 +184,6 @@ class ManagerDb():
             )
 
             food_list = ManagerApi().food_list
-            #cursor = self.connection.cursor()
 
             for food in food_list:
 
