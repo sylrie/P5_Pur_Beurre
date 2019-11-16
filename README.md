@@ -74,21 +74,21 @@ Query Limit 5<br>
 The program display the 5 foods on selected category</p>
 
 
-<p>* The application offers substitutes (2 max).<br>
-    Search substitute with better (or equal) nutrigrade<br>
-    Query Limit 2<br>
-    The program display the substitutes</p>
+<p>**The application offers substitutes (2 max).**<br>
+Search substitute with better (or equal) nutrigrade<br>
+Query Limit 2<br>
+The program display the substitutes</p>
 
-* Favorites:
-<p>The program offer to save the substitute<br>
+<p>**Favorites:**<br>
+The program offer to save the substitute<br>
 If there is 2 substitutes, the user need to select the favorite he want to save.<br>
 A user must be selected<br>
 The program offer to show saved favorites and details<br>
 The user select what he want to do<br>
 Favorite food can be deleted.</p>
 
-* Interaction of the user with the program in the terminal.
-* Management of user input errors.
-<p> The program check the user's answer</p>
+<p>**Interaction of the user with the program in the terminal.**</p>
+<p>**Management of user input errors.**<br>
+The program check the user's answer</p>
 
 * Using a **MySql database**.
