@@ -74,8 +74,7 @@ Query Limit 5<br>
 The program display the 5 foods on selected category</p>
 
 
-* The application offers substitutes (2 max).
-<p> 
+<p>* The application offers substitutes (2 max).<br>
     Search substitute with better (or equal) nutrigrade<br>
     Query Limit 2<br>
     The program display the substitutes</p>
