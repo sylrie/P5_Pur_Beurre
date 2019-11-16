@@ -64,22 +64,22 @@ If the user **return 2**,
 
 ## FEATURES
 
-* Search for food in the **Open Food Facts API**.
-<p>Make an API request with 'category' parameter.<br>
+<p>1-Search for food in the **Open Food Facts API**.<br>
+Make an API request with 'category' parameter.<br>
 Input values to database (food table), using the Json file from the request</p>
 
-* Select food form category (5 foods)
-<p>Search in food table products with selected category<br>
+<p>2-Select food form category (5 foods)<br>
+Search in food table products with selected category<br>
 Query Limit 5<br>
 The program display the 5 foods on selected category</p>
 
 
-<p>**The application offers substitutes (2 max).**<br>
+<p>3-The application offers substitutes (2 max).<br>
 Search substitute with better (or equal) nutrigrade<br>
 Query Limit 2<br>
 The program display the substitutes</p>
 
-<p>**Favorites:**<br>
+<p>4-Favorites:<br>
 The program offer to save the substitute<br>
 If there is 2 substitutes, the user need to select the favorite he want to save.<br>
 A user must be selected<br>
@@ -87,8 +87,8 @@ The program offer to show saved favorites and details<br>
 The user select what he want to do<br>
 Favorite food can be deleted.</p>
 
-<p>**Interaction of the user with the program in the terminal.**</p>
-<p>**Management of user input errors.**<br>
+<p>5-Interaction of the user with the program in the terminal.</p>
+<p>6-Management of user input errors.<br>
 The program check the user's answer</p>
 
 * Using a **MySql database**.
