@@ -65,19 +65,30 @@ If the user **return 2**,
 ## FEATURES
 
 * Search for food in the **Open Food Facts API**.
-Make an API request for input values to database (food table)
+<p>Make an API request with 'category' parameter.<br>
+Input values to database (food table), using the Json file from the request</p>
 
-* Select food form category.
-The program shows 5 foods on selected category
+* Select food form category (5 foods)
+<p>Search in food table products with selected category<br>
+Query Limit 5<br>
+The program display the 5 foods on selected category</p>
+
 
 * The application offers substitutes (2 max).
-Looking into the database for find substitutes
+<p>Search substitute with better (or equal) nutrigrade<br>
+Query Limit 2<br>
+The program display the substitutes</p>
 
 * Favorites:
-The program offer to save the substitute,
-show saved favorites and details,
-favorite food can be deleted.
+<p>The program offer to save the substitute<br>
+If there is 2 substitutes, the user need to select the favorite he want to save.<br>
+A user must be selected<br>
+The program offer to show saved favorites and details<br>
+The user select what he want to do<br>
+Favorite food can be deleted.</p>
 
 * Interaction of the user with the program in the terminal.
 * Management of user input errors.
+<p> The program check the user's answer</p>
+
 * Using a **MySql database**.

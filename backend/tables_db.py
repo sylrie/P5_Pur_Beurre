@@ -56,7 +56,7 @@ def show_value(value, table, column, column_value):
 
     return query
 
-def show_mutli( value, table, column, column_value):
+def show_mutli( value, table, columns, column_values):
     """ look values for selected table and selected values """
 
     sql = """SELECT {}
@@ -68,10 +68,10 @@ def show_mutli( value, table, column, column_value):
         LIMIT 2""".format(
             value,
             table,
-            column[0],
-            column_value[0],
-            column[1],
-            column_value[1]
+            columns[0],
+            column_values[0],
+            columns[1],
+            column_values[1]
         )
 
     query = ManagerDb().query(sql)
