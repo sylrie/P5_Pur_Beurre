@@ -64,7 +64,7 @@ If the user **return 2**,
 
 ## FEATURES
 
-<p>1-Search for food in the **Open Food Facts API**.<br>
+<p>1-Search for food in the Open Food Facts API.<br>
 Make an API request with 'category' parameter.<br>
 Input values to database (food table), using the Json file from the request</p>
 

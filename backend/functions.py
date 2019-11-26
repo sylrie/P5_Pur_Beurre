@@ -27,32 +27,32 @@ def cesar(chain, dec):
 
     alph = string.ascii_uppercase
     character = chain.upper()
-    return character.translate(str.maketrans(alph,alph[dec:]+alph[:dec]))
+    return character.translate(str.maketrans(alph, alph[dec:]+alph[:dec]))
 
 def coding(password, action=None):
     """ select the key for Cesar method and check characters"""
-    
+
     # key for code or uncode
     if action == "code":
         key = 10
     else:
         key = -10
 
-    to_crypt =[]
+    to_crypt = []
 
     for character in password:
-        
+
         if character.lower() == character:
             new_character = cesar(character.upper(), key)
             coded = new_character.lower()
         else:
             coded = cesar(character, key)
-        
+
         to_crypt.append(coded)
-    
+
     mdp = "".join(to_crypt)
 
-    return(mdp)
+    return mdp
 
 def check_input(to_check):
     """ Check if input is integer """
@@ -60,7 +60,7 @@ def check_input(to_check):
     try:
         to_check = int(to_check)
         return True
-    
+
     except ValueError:
         return False
 

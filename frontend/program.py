@@ -76,7 +76,7 @@ class Program():
                     if check:
                         nbr = int(nbr)
 
-                        if int(nbr) - 1 in range(len(users)):
+                        if nbr - 1 in range(len(users)):
 
                             username = tables.show_value('username', 'users', 'id', nbr)
                             color_print(

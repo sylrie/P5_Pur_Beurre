@@ -73,5 +73,5 @@ class ManagerApi():
 
                     self.food_list.append(food_data)
 
-                except Exception as e:
-                    pass
+                except Exception as err:
+                    print(err)
