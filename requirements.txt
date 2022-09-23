@@ -5,7 +5,7 @@ idna==2.8
 mysql-connector==2.2.9
 mysql-connector-python==8.0.18
 post==2019.4.13
-protobuf==3.15.0
+protobuf==3.18.3
 public==2019.4.13
 query-string==2019.4.13
 request==2019.4.13
